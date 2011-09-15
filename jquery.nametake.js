@@ -2,6 +2,17 @@
  *  nametake.js
 `*
  */
+if (!Array.prototype.indexOf) {
+  Array.prototype.indexOf = function(target) {
+    for (var i = 0; i < this.length; i++) {
+      if (this[i] === target) {
+        return i;
+      }
+    }
+    return -1;
+  };
+}
+
 (function($) {
   var params = {
     ajaxTagName: 'body',
